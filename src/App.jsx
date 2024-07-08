@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-
+import UserContextProvider from './Context/UserContextProvider'
+import Login from './Components/Login'
+import Dashboard from './Components/Dashboard'
+import { Outlet } from 'react-router-dom'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className='text-3xl'>Hello World</h1>
-    </>
+    <UserContextProvider>
+      <Outlet/>
+    </UserContextProvider>
   )
 }
-
 export default App
